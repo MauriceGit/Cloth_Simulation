@@ -1,0 +1,71 @@
+/*********************************************************************
+* lescegra - image loader                                            *
+*                                                                    *
+* http://geeky.kicks-ass.org/projects/lescegra.html                  *
+*                                                                    *
+* Copyright 2003-2004 by Enno Cramer <uebergeek@web.de>              *
+*                                                                    *
+* This library is free software; you can redistribute it and/or      *
+* modify it under the terms of the GNU Library General Public        *
+* License as published by the Free Software Foundation; either       *
+* version 2 of the License, or (at your option) any later version.   *
+*                                                                    *
+* This library is distributed in the hope that it will be useful,    *
+* but WITHOUT ANY WARRANTY; without even the implied warranty of     *
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  *
+* Library General Public License for more details.                   *
+*                                                                    *
+* You should have received a copy of the GNU Library General Public  *
+* License along with this library; if not, write to the Free         *
+* Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA. *
+*********************************************************************/
+
+/* package definitions */
+#undef PKG_MAINTAINER
+#undef PKG_REVISION
+
+/* architecture */
+#undef const
+#undef inline
+#undef WORDS_BIGENDIAN
+
+/* c type sizes */
+#undef SIZEOF_SHORT_INT
+#undef SIZEOF_INT
+#undef SIZEOF_LONG_INT
+
+/* functions */
+#undef HAVE_SNPRINTF
+#undef HAVE_VSNPRINTF
+#undef HAVE_FCONVERT
+#undef HAVE_FCVT
+
+/* header */
+#undef HAVE_EXECINFO_H
+
+/* libraries */
+#undef HAVE_LIBZ
+
+
+typedef unsigned char uint8;
+typedef signed char sint8;
+
+#if SIZEOF_SHORT_INT == 2
+typedef unsigned short int uint16;
+typedef signed short int sint16;
+#elif SIZEOF_INT == 2
+typedef unsigned int uint16;
+typedef signed int sint16;
+#else
+# error "cannot define int16"
+#endif
+
+#if SIZEOF_INT == 4
+typedef unsigned int uint32;
+typedef signed int sint32;
+#elif SIZEOF_LONG_INT == 4
+typedef unsigned long int uint32;
+typedef signed long int sint32;
+#else
+# error "cannot define int32"
+#endif

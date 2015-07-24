@@ -1,0 +1,11 @@
+texture.o: texture.c texture.h types.h imageLoader/include/cgimage.h \
+ logic.h
+vector.o: vector.c stringOutput.h types.h
+main.o: main.c io.h scene.h types.h
+scene.o: scene.c stringOutput.h scene.h types.h logic.h texture.h \
+ particle.h vector.h
+io.o: io.c io.h scene.h types.h logic.h particle.h texture.h vector.h
+particle.o: particle.c particle.h types.h logic.h vector.h
+logic.o: logic.c stringOutput.h logic.h types.h vector.h texture.h \
+ scene.h particle.h
+stringOutput.o: stringOutput.c stringOutput.h

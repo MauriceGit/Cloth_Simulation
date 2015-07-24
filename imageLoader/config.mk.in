@@ -1,0 +1,32 @@
+abs_srcdir   := @abs_top_srcdir@
+abs_builddir := @abs_top_builddir@
+
+# programs
+SHELL    := @SHELL@
+CPP      := @CPP@
+CC       := @CC@
+AR       := @AR@
+
+DEPEND      := @MAKEDEPEND@
+NATURALDOCS := @NATURALDOCS@
+
+# generic flags
+CFLAGS   := @CFLAGS@
+CPPFLAGS := @CPPFLAGS@ -I$(srcdir)/include -I$(builddir)
+LIBS     := @LIBS@
+
+# optional libraries
+HAVE_LIBZ   := @HAVE_LIBZ@
+
+# install pathes
+prefix      := @prefix@
+exec_prefix := @exec_prefix@
+bindir      := @bindir@
+sbindir     := @sbindir@
+libexecdir  := @libexecdir@
+datadir     := @datadir@
+sysconfdir  := @sysconfdir@
+libdir      := @libdir@
+includedir  := @includedir@
+mandir      := @mandir@
+docdir      := ${datadir}/doc/image-loader

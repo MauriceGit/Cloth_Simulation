@@ -1,0 +1,12 @@
+p {
+    text-indent: 0;
+    margin-bottom: 0.5em;
+}
+
+.CCode {
+    background: #e0e0e0;
+
+    margin: 0.5em;
+    border: solid thin black;
+    padding: 0.5em;
+}

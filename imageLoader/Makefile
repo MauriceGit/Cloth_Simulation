@@ -1,0 +1,54 @@
+srcdir   := $(if .,$(patsubst %/,%,.),.)
+builddir := $(if ,$(patsubst %/,%,),.)
+
+include $(builddir)/config.mk
+
+HDR := compat.h error.h endian.h image.h
+SRC := compat.o error.o endian.o \
+       image.o image_bmp.o image_pcx.o image_ppm.o image_tga.o
+
+ifeq ($(HAVE_LIBZ),yes)
+SRC += image_png.o
+endif
+
+OBJ := $(addprefix $(builddir)/src/, $(SRC:.c=.o))
+LIB := $(builddir)/lib/libcgimage.a
+
+all: build
+
+$(LIB): $(OBJ)
+	$(AR) rc $@ $?
+
+$(OBJ): $(builddir)/%.o : $(srcdir)/%.c
+	$(CC) -c -o $@ $(CFLAGS) $(CPPFLAGS) $<
+
+build: $(LIB)
+ifdef NATURALDOCS
+	$(NATURALDOCS) -i $(srcdir) -p $(srcdir)/doc/conf -o HTML $(builddir)/doc -s Default Fixup
+endif
+
+install: build
+	mkdir -p $(libdir)
+	mkdir -p $(includedir)/image
+	cp $(LIB) $(libdir)
+	for h in $(HDR); do cp $(srcdir)/include/$$h $(includedir)/image; done
+ifdef NATURALDOCS
+	mkdir -p $(docdir)
+	cp -r $(builddir)/doc $(docdir)/api
+endif
+
+uninstall:
+	rm -f $(libdir)/libimage.a
+	for h in $(HDR); do rm -f $(includedir)/image/$$h; done
+	rmdir $(includedir)/image
+	rm -rf $(docdir)
+
+clean:
+	rm -f $(OBJ)
+	rm -f $(LIB)
+
+distclean: clean
+	rm -f config.h config.log config.mk config.status Makefile
+	rm -rf lib
+
+.PHONY: all install uninstall clean distclean

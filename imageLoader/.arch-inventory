@@ -1,0 +1,1 @@
+precious ^(configure|autom4te.cache)$
