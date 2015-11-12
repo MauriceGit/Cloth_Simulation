@@ -1,6 +1,4 @@
 /**
- * @file
- * ein erster Versuch, eine eigene Datei zu erstellen...
  * @author Maurice Tollmien.
  */
 
