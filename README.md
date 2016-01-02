@@ -4,12 +4,14 @@ This is a side project of mine. It's about cloth simulation (it always kind of f
 particles.
 
 This is how it looks in its final form:
+
 ![Cloth-simulation](https://github.com/MauriceGit/Cloth_Simulation/blob/master/Screenshots/cloth_sphere_.png "Final cloth simulation")
 
 Or in wireframe-mode so we can see the cloth better:
+
 ![Cloth-simulation wireframe](https://github.com/MauriceGit/Cloth_Simulation/blob/master/Screenshots/cloth_sphere.png "Final cloth simulation in wireframe mode")
 
-* **Physics behind it**
+## **Physics behind it**
 
 The principle behind the cloth animation is quite simple. The cloth consists of a number of particles which are connected via some kind of virtual spring.
 
@@ -35,11 +37,12 @@ the accelleration, velocity and new position is estimated and particles get posi
 ![Cloth-simulation with wind](https://github.com/MauriceGit/Cloth_Simulation/blob/master/Screenshots/cloth_hanging.png "Cloth simulation with some wind")
 ![Cloth-simulation with spheres](https://github.com/MauriceGit/Cloth_Simulation/blob/master/Screenshots/bullet_cloth.png "Cloth after fast collision with spheres")
 
-* **Collision**
+## **Collision**
 
 There are a couple of simple collisions detected and handled.
 
 Collision with the floor is handled:
+
 ![Cloth-simulation with wind](https://github.com/MauriceGit/Cloth_Simulation/blob/master/Screenshots/cloth_final.png "Cloth collision with the floor")
 
 Collision with spheres:
@@ -47,5 +50,6 @@ Collision with spheres:
 ![Cloth-simulation with a sphere](https://github.com/MauriceGit/Cloth_Simulation/blob/master/Screenshots/Sphere_Cloth_2.png "Cloth collision with a sphere")
 
 Collision with cubes (sorry, it not obvious, but there is a cube underneath there ;)):
+
 ![Cloth-simulation with wind](https://github.com/MauriceGit/Cloth_Simulation/blob/master/Screenshots/cloth_final_wireframe.png "Cloth collision with the floor")
 
