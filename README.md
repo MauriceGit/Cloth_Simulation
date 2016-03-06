@@ -1,7 +1,7 @@
 # Cloth-Simulation with interacting particles
 
-This is a side project of mine. It's about cloth simulation (it always kind of fascinated me) with connected
-particles.
+This is a side project of mine. It's about cloth simulation with connected
+particles (it always kind of fascinated me).
 
 This is how it looks in its final form:
 
@@ -13,7 +13,7 @@ Or in wireframe-mode so we can see the cloth better:
 
 ## **Physics behind it**
 
-The principle behind the cloth animation is quite simple. The cloth consists of a number of particles which are connected via some kind of virtual spring.
+The cloth consists of a number of particles which are connected with a virtual spring.
 
 - Each particle is connected directly to the four particles right next to it (to keep the structure).
 - Each particle is connected to the four diagonal positioned particles (to keep the cloth from diagonally stretching too much or folding up).
@@ -31,7 +31,7 @@ Supplementary there are a couple of external forces applied to all (or some) par
 - Wind. For each triangle of particles the projecting surface facing the wind-direction is calculated. Dependend on this surface a wind-force is
     applied to the correspondent particles.
 
-After calculating all forces and constraints there is a simple Euler-Integration calculated for each particle. So after calculating all forces
+After calculating all forces and constraints there is a simple Euler Integration calculated for each particle. So after calculating all forces
 the accelleration, velocity and new position is estimated and particles get positioned accordingly.
 
 ![Cloth-simulation with wind](https://github.com/MauriceGit/Cloth_Simulation/blob/master/Screenshots/cloth_hanging.png "Cloth simulation with some wind")
